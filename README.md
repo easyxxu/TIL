@@ -1,8 +1,8 @@
 # TIL
 
-### Today I Learned.
+> Today I Learned.
 
 #### Category
 
-- CS
+- [CS](https://github.com/easyxxu/TIL/tree/main/CS)
 - Programmers

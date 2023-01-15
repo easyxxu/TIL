@@ -1,6 +1,3 @@
 function solution(n, k) {
-    k-=~~(n/10);
-    console.log(k)
-    if (k < 0) k = 0;
-    return n*12000+k*2000;
+    return n>=10 ? 12000*n + 2000*k - Math.floor(n/10)*2000 : 12000*n+2000*k
 }

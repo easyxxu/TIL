@@ -1,4 +1,4 @@
 function solution(emergency) {
-    let first = emergency.slice().sort((a,b)=>b-a) //내림차순 정렬
-    return emergency.map(v => first.indexOf(v)+1)
+    let arr = [...emergency].sort((a,b)=>b-a) //내림차순 정렬
+    return emergency.map(v => arr.indexOf(v)+1)
 }

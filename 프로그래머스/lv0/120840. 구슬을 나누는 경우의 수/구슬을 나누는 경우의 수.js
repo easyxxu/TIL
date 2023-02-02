@@ -1,16 +1,5 @@
-function factorial(n){
-    let bigN = BigInt(n);
-    
-    if(bigN === BigInt(1) || bigN === BigInt(0)){
-        return BigInt(1);
-    }
-    
-    return bigN * factorial(bigN - BigInt(1));
-}
+const 팩토리얼 = (num) => num === 0 ? 1 : num * 팩토리얼(num - 1)
 
 function solution(balls, share) {
-    const n = balls;
-    const m = share;
-    
-    return factorial(n) / (factorial(n - m) * factorial(m));  
+  return Math.round(팩토리얼(balls) / 팩토리얼(balls - share) / 팩토리얼(share))
 }

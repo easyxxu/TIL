@@ -17,8 +17,8 @@ function solution(dots) {
     const bc = Math.abs(b[1]-c[1]) / Math.abs(b[0]-c[0])
     
     //기울기가 같다면 평행
-    if(ab === cd || ac === bd || ad === bc) 
-        return 1
-    else return 0
-    
+    // if(ab === cd || ac === bd || ad === bc) 
+    //     return 1
+    // else return 0
+    return (ab === cd || ac === bd || ad === bc) ? 1 : 0
 }

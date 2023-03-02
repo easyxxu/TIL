@@ -1,4 +1,4 @@
 function solution(n)
 {
-    return n.toString().split('').reduce((a, b)=>Number(a)+Number(b) ,0)
+    return (n+"").split("").reduce((acc, curr) => acc + parseInt(curr), 0)
 }

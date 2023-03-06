@@ -1,9 +1,3 @@
 function solution(x, n) {
-    let answer = []
-    const xVal = x
-    for(let i=0;i<n;i++){
-        answer.push(x)
-        x += xVal
-    }
-    return answer
+    return Array(n).fill(x).map((v, i) => (i + 1) * v)
 }

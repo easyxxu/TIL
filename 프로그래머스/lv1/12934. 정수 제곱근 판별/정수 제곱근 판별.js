@@ -1,13 +1,8 @@
 function solution(n) { 
-    for(let i=1;i<=n;i++){
-        if(i**2 === n){
-            return (i+1)**2;
-        }
-    }
-    
-    for(let i=1;i<n;i++){
-        if(i**2 !== n){
-            return -1;
-        }
+    switch(n % Math.sqrt(n)){
+        case 0:
+          return Math.pow(Math.sqrt(n) + 1, 2);
+        default:
+          return -1
     }
 }

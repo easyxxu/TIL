@@ -5,5 +5,5 @@ function solution(n) {
             x.push(i)
         }
     }
-    return x[0]
+    return Math.min(...x)
 }

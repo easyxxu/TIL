@@ -1,20 +1,25 @@
 function solution(nums) {
-    let answer = 0;
-    const len = nums.length;
+  const result = [];
 
-    for(let i = 0; i < len; i++) {
-        for(let j = i+1; j < len; j++) {
-            for(let k = j+1; k < len; k++) {
-                const sum = nums[i] + nums[j] + nums[k];
-                if(isPrime(sum)) answer++;
-            }
-        }
+  const isPrimeNumber = (n) => {
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+      if (n % i === 0) return false;
     }
-    return answer;
-}
+    return true;
+  };
 
-function isPrime(sum) {
-    for(let i = 2; i < sum; i++)
-    if(sum % i === 0) return false;
-    return sum > 1;
+  const size = nums.length;
+
+  for (let i = 0; i < size; i++) {
+    for (let j = i + 1; j < size; j++) {
+      for (let k = j + 1; k < size; k++) {
+        const num = nums[i] + nums[j] + nums[k];
+        if (isPrimeNumber(num)) {
+          result.push(num);
+        }
+      }
+    }
+  }
+    console.log(result)
+  return result.length;
 }

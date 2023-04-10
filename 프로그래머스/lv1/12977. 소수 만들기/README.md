@@ -1,10 +1,10 @@
 # [level 1] 소수 만들기 - 12977 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12977) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/12977#qna) 
 
 ### 성능 요약
 
-메모리: 33.5 MB, 시간: 0.06 ms
+메모리: 33.5 MB, 시간: 4.33 ms
 
 ### 구분
 

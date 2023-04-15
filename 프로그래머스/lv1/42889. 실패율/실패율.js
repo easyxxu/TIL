@@ -1,10 +1,9 @@
 function solution(N, stages) {
     //실패율 구하기
     let fail = []
-    let result = []
     for(let i=1;i<=N;i++){
         let yet = 0
-    let success = 0
+        let success = 0
         for(let k = 0;k < stages.length;k++){
             if(stages[k] == i){
                 yet++
@@ -12,7 +11,7 @@ function solution(N, stages) {
                 success++
             }
         }
-        fail.push({stage:i ,percent: yet/success})
+        fail.push({stage:i, percent: yet/success})
     }
     //내림차순
     fail.sort((a,b)=>{
@@ -24,5 +23,4 @@ function solution(N, stages) {
         }
     })
     return fail.map(x => x.stage)
-    
 }

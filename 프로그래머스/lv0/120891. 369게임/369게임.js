@@ -1,3 +1,4 @@
 function solution(order) {
-    return order.toString().split('').filter(x => x==3 || x==6 || x==9).length
+    let cnt = order.toString().match(/[369]/g)
+    return cnt !== null ? cnt.length : 0
 }

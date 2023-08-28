@@ -1,25 +1,12 @@
 function solution(board, moves) {
     let basket = []
-    let result = 0
     for(let i of moves){
-        const doll = pick(board, i-1)
-        if(doll){
-            if(basket[basket.length-1] === doll){
-                    basket.pop();
-                    result += 2;
-                }else{
-                    basket.push(doll);
-                }
+        board.forEach((item, idx) => {
+            if(item[i-1] > 0 && board[idx+1] !== undefined ){
+                basket.push(board[idx][i-1])
+                board[idx][i-1] = 0 // 뽑은 인형 초기화
             }
-        }
-    return result
-}
-function pick(board,i){
-    for(let n=0;n<board.length;n++){
-        if(board[n][i] > 0){
-            const doll = board[n][i]
-            board[n][i] = 0;
-            return doll;
-        }
+        })
     }
+    console.log(basket)
 }

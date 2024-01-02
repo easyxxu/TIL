@@ -1,15 +1,10 @@
 function solution(id_list, report, k) {
     const set = new Set(report);
     const reportedUserArr = [];
-    const finalReportedUsers = [];
+    const finalReportedUsers = new Array(id_list.length).fill(0);
     const reportedUsers = [];
-    const result = [];
-    for(let i = 0; i < id_list.length; i++){
-        finalReportedUsers[i] = 0;
-    }
-    for(let i = 0; i < id_list.length; i++){
-        result[i] = 0;
-    }
+    const result = new Array(id_list.length).fill(0);
+    
     for(let i of set.values()){
     	const reportArr = i.split(' ');
         reportedUserArr.push(reportArr[1]);

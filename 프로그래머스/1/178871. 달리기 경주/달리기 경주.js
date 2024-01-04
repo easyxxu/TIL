@@ -6,13 +6,8 @@ function solution(players, callings) {
     callings.forEach((player) => {
         const order = playersObj[player];
         playersObj[player] = order - 1;
-        playersObj[players[order-2]] = order;
-        
-        const temp = players[order - 1];
-        players[order - 1] = players[order - 2];
-        players[order - 2] = temp;
+        playersObj[player[order-2]] = order + 1; 
     })
-    
     const sortedPlayers = Object.keys(playersObj).sort((a, b) => playersObj[a] - playersObj[b]);
     return sortedPlayers;
 }

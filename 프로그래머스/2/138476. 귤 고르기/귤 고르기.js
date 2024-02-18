@@ -1,20 +1,15 @@
-function solution(k, tangerine) {
-    let result = 0
-    const obj = {}
-    for(let i of tangerine){
-        obj[i] === undefined ? obj[i] = 1 : obj[i]++
-    }
-    const count = Object.values(obj).sort((a,b) => b-a)
-    
-	for(let i = 0;i < count.length; i++){
-		if(count[i] >= k){
-			result++
-			break;
-        }else if(count[i] < k){
-			k -= count[i]
-            result++
-        }
-		if(k === 0) break;
+function solution(k, tangerine){
+	let result = 0;
+	let countOfSize = {};
+	for(let i of tangerine) {
+		countOfSize[i] === undefined ? countOfSize[i] = 1 : countOfSize[i]++
 	}
-    return result
+	countOfSize = Object.values(countOfSize).sort((a,b) => b - a);
+	
+	for(let count of countOfSize){
+		result++;
+		if(count < k) k -= count
+		else break;
+	}
+	return result;
 }

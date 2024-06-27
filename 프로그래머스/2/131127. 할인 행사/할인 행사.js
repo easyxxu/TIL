@@ -1,16 +1,33 @@
+
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
 function solution(want, number, discount) {
-    let result = 0
-    const lastDay = discount.length - 9
-    
-    for(let i=0;i<lastDay;i++){
-        const cart = Array(number.length).fill(0)
-        if(!want.includes(discount[i])) continue
-        for(let k=i;k<i+10;k++){
-            cart[want.indexOf(discount[k])]++
+    let count = 0;
+    for (let i = 0; i < discount.length - 9; i++) {
+        const slice = discount.slice(i, i+10);
+
+        let flag = true;
+        for (let j = 0; j < want.length; j++) {
+            if (slice.filter(item => item === want[j]).length !== number[j]) {
+                flag = false;
+                break;
+            }
         }
-        if(JSON.stringify(number) === JSON.stringify(cart)){
-            result++
-        }
+        if (flag) count += 1;
     }
-    return result
+    return count;
 }
